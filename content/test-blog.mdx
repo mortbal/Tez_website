@@ -1,0 +1,55 @@
+---
+title: "Getting Started with Unreal Engine 5"
+date: "2025-08-26"
+author: "Your Name"
+tags: ["unreal-engine", "game-development", "tutorial"]
+description: "A comprehensive guide to getting started with Unreal Engine 5 development"
+---
+
+# Getting Started with Unreal Engine 5
+
+Welcome to the exciting world of **Unreal Engine 5** development! This guide will walk you through the essential concepts you need to know.
+
+## What You'll Learn
+
+- Basic UE5 concepts and terminology
+- Setting up your first project
+- Understanding Blueprints vs C++
+- Essential workflows for game development
+
+## Key Features of UE5
+
+UE5 introduces several groundbreaking features:
+
+1. **Nanite Geometry** - Revolutionary virtualized geometry system
+2. **Lumen** - Dynamic global illumination solution  
+3. **World Partition** - Better handling of large worlds
+4. **Chaos Physics** - Advanced destruction and simulation
+
+### Code Example
+
+Here's a simple Blueprint node setup for player movement:
+
+```cpp
+// Basic C++ movement component
+void AMyPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+    Super::SetupPlayerInputComponent(PlayerInputComponent);
+    
+    // Bind movement functions
+    PlayerInputComponent->BindAxis("MoveForward", this, &AMyPawn::MoveForward);
+    PlayerInputComponent->BindAxis("MoveRight", this, &AMyPawn::MoveRight);
+}
+```
+
+> **Pro Tip:** Always start with Blueprints for prototyping, then optimize critical systems in C++ for better performance.
+
+## Getting Help
+
+Need more information? Check out these resources:
+
+- [Official UE5 Documentation](https://docs.unrealengine.com/)
+- [UE5 Community Forums](https://forums.unrealengine.com/)
+- [Epic Games Developer Community](https://dev.epicgames.com/)
+
+Happy developing! 🎮
