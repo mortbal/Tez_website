@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #0a0a0a;
@@ -16,7 +16,7 @@
   --color-primary-300: #a663cc;
   --color-primary-200: #c298dc;
   --color-primary-100: #e0c3fc;
-  
+
   /* Gaming Accent Colors */
   --color-accent-cyan: #00d4ff;
   --color-accent-cyan-dark: #0099cc;
@@ -26,24 +26,39 @@
   --color-accent-teal-dark: #26a69a;
   --color-accent-purple: #bb86fc;
   --color-accent-orange: #ffab40;
-  
+
   /* Background Colors */
   --color-bg-primary: #0a0a0a;
   --color-bg-secondary: #151515;
   --color-bg-tertiary: #1f1f1f;
   --color-bg-card: #252525;
   --color-bg-hover: #2a2a2a;
-  
+
   /* Text Colors */
   --color-text-primary: #f8f9fa;
   --color-text-secondary: #e9ecef;
   --color-text-muted: #adb5bd;
   --color-text-dim: #6c757d;
-  
+
   /* Border Colors */
   --color-border-primary: #333333;
   --color-border-secondary: #444444;
   --color-border-accent: #00d4ff;
+
+  /* Semantic Theme Colors - Component Level */
+  --color-theme-primary: var(--color-accent-cyan);
+  --color-theme-primary-hover: var(--color-accent-cyan-dark);
+  --color-theme-secondary: var(--color-primary-600);
+  --color-theme-secondary-hover: var(--color-primary-500);
+  --color-theme-accent: var(--color-accent-teal);
+  --color-theme-accent-hover: var(--color-accent-teal-dark);
+  --color-theme-danger: var(--color-accent-red);
+  --color-theme-danger-hover: var(--color-accent-red-dark);
+
+  /* Interactive States */
+  --color-interactive-hover: var(--color-bg-hover);
+  --color-interactive-focus: var(--color-theme-primary);
+  --color-interactive-disabled: var(--color-text-dim);
 }
 
 @theme inline {

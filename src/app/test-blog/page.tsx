@@ -1,36 +1,41 @@
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import { promises as fs } from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import { promises as fs } from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 
 // Import our custom MDX components
-import { useMDXComponents } from '../../../components/mdx-components';
+import { useMDXComponents } from '../../../components/mdx-components'
 
 async function getTestBlogContent() {
   try {
     // Read the MDX file
-    const filePath = path.join(process.cwd(), 'content', 'test-blog.mdx');
-    const fileContent = await fs.readFile(filePath, 'utf8');
-    
+    const filePath = path.join(
+      process.cwd(),
+      'content',
+      'blog',
+      'test-blog.mdx'
+    )
+    const fileContent = await fs.readFile(filePath, 'utf8')
+
     // Parse frontmatter and content
-    const { data: frontmatter, content } = matter(fileContent);
-    
+    const { data: frontmatter, content } = matter(fileContent)
+
     return {
       frontmatter,
-      content
-    };
+      content,
+    }
   } catch (error) {
-    console.error('Error reading test-blog.mdx:', error);
+    console.error('Error reading test-blog.mdx:', error)
     return {
       frontmatter: { title: 'Error Loading Content' },
-      content: 'Could not load the blog content.'
-    };
+      content: 'Could not load the blog content.',
+    }
   }
 }
 
 export default async function TestBlogPage() {
-  const { frontmatter, content } = await getTestBlogContent();
-  
+  const { frontmatter, content } = await getTestBlogContent()
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Header with frontmatter data */}
@@ -45,7 +50,7 @@ export default async function TestBlogPage() {
           {frontmatter.tags && (
             <div className="mt-4 flex flex-wrap gap-2">
               {frontmatter.tags.map((tag: string) => (
-                <span 
+                <span
                   key={tag}
                   className="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm"
                 >
@@ -60,12 +65,9 @@ export default async function TestBlogPage() {
       {/* Main content */}
       <main className="max-w-4xl mx-auto px-6 py-8">
         <article className="prose prose-invert prose-blue max-w-none">
-          <MDXRemote 
-            source={content}
-            components={useMDXComponents({})}
-          />
+          <MDXRemote source={content} components={useMDXComponents({})} />
         </article>
       </main>
     </div>
-  );
+  )
 }

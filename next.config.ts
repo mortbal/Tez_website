@@ -1,14 +1,14 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   // No pageExtensions modification - keeps portfolio pages as pure React
   // MDX will be processed separately for content files only
-  
+
   experimental: {
     // Enable optimized bundling
     optimizePackageImports: ['react', 'react-dom'],
   },
-  
+
   // Webpack configuration for MDX content processing
   webpack: (config, { isServer }) => {
     // Configure MDX loader for .mdx files in /content directory only
@@ -27,20 +27,23 @@ const nextConfig: NextConfig = {
               // Syntax highlighting for code blocks
               require('rehype-highlight'),
               // Auto-link headings for navigation
-              [require('rehype-autolink-headings'), {
-                behavior: 'wrap',
-                properties: {
-                  className: ['anchor-link'],
+              [
+                require('rehype-autolink-headings'),
+                {
+                  behavior: 'wrap',
+                  properties: {
+                    className: ['anchor-link'],
+                  },
                 },
-              }],
+              ],
             ],
           },
         },
       ],
-    });
+    })
 
-    return config;
+    return config
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig

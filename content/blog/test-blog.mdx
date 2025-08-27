@@ -1,9 +1,9 @@
 ---
-title: "Getting Started with Unreal Engine 5"
-date: "2025-08-26"
-author: "Your Name"
-tags: ["unreal-engine", "game-development", "tutorial"]
-description: "A comprehensive guide to getting started with Unreal Engine 5 development"
+title: 'Getting Started with Unreal Engine 5'
+date: '2025-08-26'
+author: 'Your Name'
+tags: ['unreal-engine', 'game-development', 'tutorial']
+description: 'A comprehensive guide to getting started with Unreal Engine 5 development'
 ---
 
 # Getting Started with Unreal Engine 5
@@ -22,7 +22,7 @@ Welcome to the exciting world of **Unreal Engine 5** development! This guide wil
 UE5 introduces several groundbreaking features:
 
 1. **Nanite Geometry** - Revolutionary virtualized geometry system
-2. **Lumen** - Dynamic global illumination solution  
+2. **Lumen** - Dynamic global illumination solution
 3. **World Partition** - Better handling of large worlds
 4. **Chaos Physics** - Advanced destruction and simulation
 
@@ -35,7 +35,7 @@ Here's a simple Blueprint node setup for player movement:
 void AMyPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);
-    
+
     // Bind movement functions
     PlayerInputComponent->BindAxis("MoveForward", this, &AMyPawn::MoveForward);
     PlayerInputComponent->BindAxis("MoveRight", this, &AMyPawn::MoveRight);

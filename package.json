@@ -16,6 +16,7 @@
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.5.0",
     "@types/mdx": "^2.0.13",
+    "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
     "hast-util-select": "^6.0.4",
     "motion": "^12.23.12",
@@ -27,6 +28,7 @@
     "rehype-highlight": "^7.0.2",
     "rehype-prism-plus": "^2.0.1",
     "remark-gfm": "^4.0.1",
+    "tailwind-merge": "^3.3.1",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
