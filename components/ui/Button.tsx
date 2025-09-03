@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import React, { forwardRef } from 'react'
 import { motion, MotionProps } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
@@ -9,6 +9,9 @@ export interface ButtonProps extends MotionProps {
   children: React.ReactNode
   className?: string
 }
+
+type ButtonPropsWithHTML = ButtonProps &
+  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof MotionProps>
 
 const buttonVariants = {
   primary:
@@ -27,7 +30,7 @@ const sizeVariants = {
   lg: 'px-6 py-3 text-lg',
 }
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = forwardRef<HTMLButtonElement, ButtonPropsWithHTML>(
   (
     {
       variant = 'primary',
