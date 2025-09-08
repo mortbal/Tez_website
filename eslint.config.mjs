@@ -33,10 +33,7 @@ const eslintConfig = [
       'react/jsx-curly-brace-presence': ['error', 'never'],
     },
   },
-  {
-    plugins: ['prettier'],
-    extends: ['prettier'],
-  },
+  ...compat.extends('prettier'),
 ]
 
 export default eslintConfig

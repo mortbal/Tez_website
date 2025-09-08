@@ -3,9 +3,64 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent, CardHeader } from '@/components/ui/Card'
+import { ProjectGrid } from '@/components/ui/ProjectGrid'
 import { Layout } from '@/components/ui/Layout'
+import { Project } from '@/types/project'
 
 export default function Home() {
+  // Sample project data for testing ProjectCard
+  const sampleProjects: Project[] = [
+    {
+      id: 'unity-rpg-2024',
+      title: 'Epic Fantasy RPG',
+      description:
+        'A 3D fantasy RPG built with Unity featuring complex quest systems, character progression, and immersive world design. Players explore vast landscapes while battling mythical creatures.',
+      image:
+        'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&h=450&fit=crop',
+      technologies: ['unity', 'plugin'],
+      status: 'completed',
+      year: 2024,
+      role: 'Lead Developer',
+      teamSize: 4,
+      platforms: ['pc', 'xbox', 'ps'],
+      links: {
+        demo: 'https://demo.example.com',
+        github: 'https://github.com/example/unity-rpg',
+        caseStudy: 'https://case-study.example.com',
+      },
+      featured: true,
+    },
+    {
+      id: 'react-portfolio-2024',
+      title: 'Interactive Portfolio Website',
+      description:
+        'Modern portfolio site built with React and TypeScript, featuring smooth animations and responsive design for showcasing development projects.',
+      image:
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop',
+      technologies: ['react', 'typescript'],
+      status: 'in-progress',
+      year: 2024,
+      role: 'Full Stack Developer',
+      teamSize: 1,
+      platforms: ['web'],
+      links: {
+        github: 'https://github.com/example/portfolio',
+      },
+    },
+    {
+      id: 'unreal-concept-2025',
+      title: 'VR Adventure Concept',
+      description:
+        'Early concept for a virtual reality adventure game using Unreal Engine, focusing on immersive storytelling and innovative VR interactions.',
+      image:
+        'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=800&h=450&fit=crop',
+      technologies: ['unreal'],
+      status: 'concept',
+      year: 2025,
+      platforms: ['pc'],
+    },
+  ]
+
   return (
     <Layout>
       <div className="min-h-screen bg-bg-primary text-text-primary">
@@ -186,6 +241,26 @@ export default function Home() {
           >
             Test Phase 1 Setup
           </Button>
+        </motion.div>
+
+        {/* ProjectCard Testing Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.4, duration: 0.8 }}
+          className="py-16 px-4"
+        >
+          <h2 className="text-3xl font-bold text-center mb-12 text-theme-primary">
+            ProjectCard Component Test
+          </h2>
+
+          <div className="max-w-7xl mx-auto">
+            <ProjectGrid
+              projects={sampleProjects}
+              columns={3}
+              animationDelay={1.6}
+            />
+          </div>
         </motion.div>
       </div>
     </Layout>

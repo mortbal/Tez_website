@@ -9,7 +9,8 @@ export interface Project {
   role?: string // Your role (optional)
   teamSize?: number // How many people worked on it (optional)
   platforms?: ProjectPlatform[] // PC, Mobile, Console (optional)
-  links?: {   // External links (optional)
+  links?: {
+    // External links (optional)
     demo?: string
     github?: string
     caseStudy?: string

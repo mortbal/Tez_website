@@ -4,13 +4,25 @@ const nextConfig: NextConfig = {
   // No pageExtensions modification - keeps portfolio pages as pure React
   // MDX will be processed separately for content files only
 
+  // Configure external image domains
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
+
   experimental: {
     // Enable optimized bundling
     optimizePackageImports: ['react', 'react-dom'],
   },
 
   // Webpack configuration for MDX content processing
-  webpack: (config, { isServer }) => {
+  webpack: config => {
     // Configure MDX loader for .mdx files in /content directory only
     config.module.rules.push({
       test: /\.mdx$/,
