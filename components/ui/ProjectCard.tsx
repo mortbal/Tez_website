@@ -12,7 +12,7 @@ interface ProjectCardProps {
 export function ProjectCard({ project, className = '' }: ProjectCardProps) {
   return (
     <motion.div
-      className={`group relative overflow-hidden rounded-lg border border-primary bg-card ${className}`}
+      className={`group relative overflow-hidden rounded-lg border border-border-primary bg-bg-card hover:border-border-secondary hover:shadow-lg hover:shadow-accent-primary/10 ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
       whileHover={{ y: -8, transition: { duration: 0.2 } }}
@@ -30,13 +30,13 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
         <div className="absolute top-3 right-3">
           <span
             className={`
-              px-2 py-1 text-xs font-medium rounded-full
+              px-2 py-1 text-xs font-medium rounded-full text-white
               ${
                 project.status === 'completed'
-                  ? 'bg-card-badge-completed text-card-badge-text-dark'
+                  ? 'bg-status-completed'
                   : project.status === 'in-progress'
-                    ? 'bg-card-badge-in-progress text-card-badge-text-dark'
-                    : 'bg-card-badge-concept text-card-badge-text-light'
+                    ? 'bg-status-in-progress'
+                    : 'bg-status-concept'
               }
             `}
           >
@@ -47,7 +47,7 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
         {/* Featured Badge */}
         {project.featured && (
           <div className="absolute top-3 left-3">
-            <span className="px-2 py-1 text-xs font-medium rounded-full bg-card-badge-featured text-card-badge-text-light">
+            <span className="px-2 py-1 text-xs font-medium rounded-full bg-status-featured text-white">
               Featured
             </span>
           </div>
@@ -58,14 +58,14 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
       <div className="p-6 space-y-4">
         {/* Title and Year */}
         <div className="flex items-center justify-between">
-          <h3 className="text-xl font-bold text-primary group-hover:text-card-title-hover transition-colors">
+          <h3 className="text-xl font-bold text-text-primary group-hover:text-accent-primary transition-colors">
             {project.title}
           </h3>
-          <span className="text-sm text-muted">{project.year}</span>
+          <span className="text-sm text-text-muted">{project.year}</span>
         </div>
 
         {/* Description */}
-        <p className="text-secondary line-clamp-3">{project.description}</p>
+        <p className="text-text-muted line-clamp-3">{project.description}</p>
 
         {/* Technology Badges */}
         <div className="flex flex-wrap gap-2">
@@ -73,7 +73,7 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
             return (
               <span
                 key={tech}
-                className="bg-card-tech-badge text-card-tech-badge-text hover:bg-card-tech-badge-hover px-2 py-1 text-xs rounded-full"
+                className="bg-bg-secondary text-text-muted hover:bg-bg-hover hover:text-text-primary px-2 py-1 text-xs rounded-full border border-border-primary transition-colors"
               >
                 {' '}
                 {tech}
@@ -89,7 +89,7 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
               return (
                 <span
                   key={platform}
-                  className="bg-card-platform-badge text-card-platform-badge-text hover:bg-card-platform-badge-hover px-2 py-1 text-xs rounded-full"
+                  className="bg-accent-teal/20 text-accent-teal hover:bg-accent-teal hover:text-white px-2 py-1 text-xs rounded-full transition-colors"
                 >
                   {platform.toUpperCase()}
                 </span>
@@ -99,7 +99,7 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
         )}
 
         {/* Project Details */}
-        <div className="flex items-center gap-4 text-sm text-muted">
+        <div className="flex items-center gap-4 text-sm text-text-muted">
           {project.role && <span>Role: {project.role}</span>}
           {project.teamSize && <span>Team: {project.teamSize}</span>}
         </div>
@@ -110,7 +110,7 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
             {project.links.demo && (
               <a
                 href={project.links.demo}
-                className="text-card-link hover:text-card-link-hover transition-colors"
+                className="text-accent-primary hover:text-accent-primary-hover transition-colors font-medium"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -120,7 +120,7 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
             {project.links.github && (
               <a
                 href={project.links.github}
-                className="text-card-link hover:text-card-link-hover transition-colors"
+                className="text-accent-primary hover:text-accent-primary-hover transition-colors font-medium"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -130,7 +130,7 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
             {project.links.caseStudy && (
               <a
                 href={project.links.caseStudy}
-                className="text-card-link hover:text-card-link-hover transition-colors"
+                className="text-accent-primary hover:text-accent-primary-hover transition-colors font-medium"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -142,7 +142,7 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
       </div>
 
       {/* Hover Overlay Effect */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
     </motion.div>
   )
 }

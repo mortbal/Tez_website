@@ -78,7 +78,7 @@ export default function Home() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="text-5xl md:text-7xl font-bold text-center mb-6"
           >
-            <span className="text-theme-primary">Game Dev</span>{' '}
+            <span className="text-accent-primary">Game Dev</span>{' '}
             <span className="text-text-primary">Portfolio</span>
           </motion.h1>
 
@@ -105,7 +105,7 @@ export default function Home() {
               }}
             >
               <CardHeader>
-                <h3 className="text-theme-primary text-xl font-semibold">
+                <h3 className="text-accent-primary text-xl font-semibold">
                   Next.js 15
                 </h3>
               </CardHeader>
@@ -127,7 +127,7 @@ export default function Home() {
               }}
             >
               <CardHeader>
-                <h3 className="text-theme-accent text-xl font-semibold">
+                <h3 className="text-accent-teal text-xl font-semibold">
                   Tailwind CSS v4
                 </h3>
               </CardHeader>
@@ -149,7 +149,7 @@ export default function Home() {
               }}
             >
               <CardHeader>
-                <h3 className="text-theme-danger text-xl font-semibold">
+                <h3 className="text-accent-red text-xl font-semibold">
                   MDX Integration
                 </h3>
               </CardHeader>
@@ -171,7 +171,7 @@ export default function Home() {
               }}
             >
               <CardHeader>
-                <h3 className="text-theme-secondary text-xl font-semibold">
+                <h3 className="text-accent-secondary text-xl font-semibold">
                   Framer Motion
                 </h3>
               </CardHeader>
@@ -193,7 +193,7 @@ export default function Home() {
               }}
             >
               <CardHeader>
-                <h3 className="text-theme-accent text-xl font-semibold">
+                <h3 className="text-accent-teal text-xl font-semibold">
                   Code Quality
                 </h3>
               </CardHeader>
@@ -213,10 +213,10 @@ export default function Home() {
                 y: 0,
                 transition: { delay: 1.1, duration: 0.5 },
               }}
-              className="bg-primary-800 border-theme-primary"
+              className="bg-primary-800 border-accent-primary"
             >
               <CardHeader>
-                <h3 className="text-theme-primary text-xl font-semibold">
+                <h3 className="text-accent-primary text-xl font-semibold">
                   Phase 1 Complete ✅
                 </h3>
               </CardHeader>
@@ -250,7 +250,7 @@ export default function Home() {
           transition={{ delay: 1.4, duration: 0.8 }}
           className="py-16 px-4"
         >
-          <h2 className="text-3xl font-bold text-center mb-12 text-theme-primary">
+          <h2 className="text-3xl font-bold text-center mb-12 text-accent-primary">
             ProjectCard Component Test
           </h2>
 

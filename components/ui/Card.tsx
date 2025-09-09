@@ -22,7 +22,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
           gradient &&
             'bg-gradient-to-br from-bg-secondary/80 to-bg-tertiary/50',
           hover &&
-            'hover:border-border-secondary hover:shadow-lg hover:shadow-theme-primary/10',
+            'hover:border-border-secondary hover:shadow-lg hover:shadow-accent-primary/20 hover:shadow-accent-primary/10',
           className
         )}
         whileHover={hover ? { y: -2, scale: 1.02 } : {}}
